@@ -1,0 +1,42 @@
+.itemSearch:hover {
+  background-color: red;
+  cursor: pointer;
+}
+
+.selected {
+  background-color: green;
+}
+
+.search {
+  width: 400px;
+  float: left;
+  display: inline-block;
+}
+
+.viewBox {
+  width: 800px;
+  display: inline-block;
+}
+
+img {
+  float: left;
+}
+
+.description {
+  height: 175px;
+  width: 500px;
+  column-count: 2;
+}
+
+.basicOrg {
+  height: auto;
+}
+
+.listMembers {
+  max-height: 700px;
+}
+
+.itemMembers {
+  display: inline-block;
+  margin: 5px;
+}
