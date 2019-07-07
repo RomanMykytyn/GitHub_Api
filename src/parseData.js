@@ -1,6 +1,11 @@
 function parseData(data) {
     //let arrData = data.split("link:")
     //data = arrData.length == 2? arrData[1]: data;
+    if (data === undefined) {
+      
+      return false
+    }
+
     let parsed_data = {}
 
     let arrData = data.split(",")

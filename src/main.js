@@ -12,7 +12,7 @@ class App extends React.Component {
     super();
     this.state = {
       orgData: {},
-      listMembers: {},
+
 
     };
     this.choiseElement = this.choiseElement.bind(this);
@@ -21,15 +21,9 @@ class App extends React.Component {
   choiseElement(org) {
     octokit.orgs.get({org})
       .then(res => {
-        octokit.orgs.listMembers({org})
-          .then(res2 => {
-            console.log(res);
-            console.log(res2);
-            this.setState({
-              orgData: res,
-              listMembers: res2,
-            });
-          });
+        this.setState({
+          orgData: res, 
+        });
       });
 
   }
@@ -38,7 +32,7 @@ class App extends React.Component {
     return (
       <div className='main'>
         <Search choiseElement={this.choiseElement} />
-        {this.state.orgData.data ? <View orgData={this.state.orgData} listMembers={this.state.listMembers} /> : null}
+        {this.state.orgData.data ? <View orgData={this.state.orgData} /> : null}
       </div>
     );
   }

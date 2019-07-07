@@ -1,5 +1,6 @@
 import React from 'react';
 const Octokit = require('@octokit/rest');
+import PaginationBlock from './pagination';
 import parseData from './parseData';
 
 const octokit = Octokit();
@@ -78,10 +79,7 @@ class Search extends React.Component {
     else {
       var resultSearch = null;
     }
-    if (this.state.paginationData) {
-      var buttonsPagination = <div>{Object.entries(this.state.paginationData).map(el =>
-        (<button key={el[0]} value={el[1]} id={el[0]} onClick={this.handlerPagination}>{el[0]}</button>))}</div>
-    }
+    
 
     return (
       <div className='search'>
@@ -91,7 +89,7 @@ class Search extends React.Component {
         </div>
           <div className='resultSearch'>
             {resultSearch}
-            {buttonsPagination}
+            <PaginationBlock paginationData={this.state.paginationData} handlerPagination={this.handlerPagination} />
         </div>
       </div>
     );
